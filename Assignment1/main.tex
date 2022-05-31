@@ -1,0 +1,133 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Inbuilt themes in beamer
+\documentclass{beamer}
+
+% Theme choice:
+\usetheme{CambridgeUS}
+
+\setbeamertemplate{caption}[numbered]{}
+
+\usepackage{enumitem}
+\usepackage{tfrupee}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{gensymb}
+\usepackage{graphicx}
+\usepackage{txfonts}
+
+\def\inputGnumericTable{}
+
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                        
+\usepackage{calc}                                            
+\usepackage{multirow}                                        
+\usepackage{hhline}                                          
+\usepackage{ifthen}
+\usepackage{caption}
+\captionsetup[table]{skip=3pt}  
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\cbrak}[1]{\ensuremath{\left\{#1\right\}}}
+\renewcommand{\thefigure}{\arabic{table}}
+\renewcommand{\thetable}{\arabic{table}}
+
+% Title page details:
+\title{AI1110: Assignment 1}
+\author{Md Gufran Ashraf\\BT21BTECH11003}
+\date{\today}
+%\logo{\large \LaTeX{}}
+
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+
+\begin{document}
+
+% Title page frame
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% Remove logo from the next slides
+%\logo{}
+
+
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+
+% Lists frame
+\section{Question}
+\begin{frame}{Question}
+
+\textbf{Q10 - a)} : 
+The marks obtained by $120$ students in an English test are given below:\\
+\bigskip
+
+\begin{tabular}{|p{0.9cm}|p{0.3cm}|p{0.3cm}|p{0.3cm}|p{0.3cm}|p{0.3cm}|p{0.3cm}|p{0.3cm}|p{0.3cm}|p{0.3cm}|p{0.4cm}|}
+\hline
+   Marks & $0-10 & 10-20 & 20-30 & 30-40 & 40-50 & 50-60 & 60-70 & 70-80 & 80-90 & 90-100 \\ \hline
+   No. of students  & 5 & 9 & 16 & 22 & 26 & 18 & 11 & 6 & 4 & 3 $ \\ \hline
+   
+\end{tabular}
+
+\bigskip
+
+Estimate:\\
+(i) the median marks.\\
+(ii) the number of students who did not pass the test if the pass percentage was 50\\ (iii) the upper quartile marks.\\
+
+\end{frame}
+
+\section{Solution}
+\begin{frame}{Solution}
+
+\begin{tabular}{|p{1cm}|p{1cm}|p{1cm}|p{1cm}|}
+\hline
+     C.I & Marks less than & No. of students &  C.F.\\ \hline
+   $ 0-10  & 10 & 5 & 5 \\ \hline
+    10-20 & 20 & 9 & 14 \\ \hline
+    20-30 & 30 & 16 & 30 \\ \hline
+    30-40 & 40 & 22 & 52 \\ \hline
+    40-50 & 50 & 26 & 78 \\ \hline
+    50-60 & 60 & 18 & 96 \\ \hline
+    60-70 & 70 & 11 & 107 \\ \hline
+    70-80 & 80 & 6 & 113 \\ \hline
+    80-90 & 90 & 4 & 117 \\ \hline
+    90-100 & 100 & 3 & 120 $\\ \hline
+  
+\end{tabular}\\
+
+\bigskip
+\end{frame}
+
+\section{Solution (Contd..)}
+\begin{frame}{Solution (Contd..)}
+\textbf{} No. of students = $120$\\
+Median = $60$th term through cumulative marks, draw a line parellel to x-axis and then draw perpendicular line to x-axis from where it touches curve.\\
+As per the graph:\\
+\textbf{i) }\textbf{Median }= $42$\\
+
+\textbf{ii)} Passing marks = $50$\\
+Draw a line parellel to y-axis and perpendicular line to y-axis from where it touches curve.\\
+\textbf{No. of students who did not pass} = $78$\\
+
+\textbf{iii)} Upper quartile marks: $\frac{3}{4}$ X $n^{th} term \\
+  = \dfrac{3}{4} X 120 = 90^{th}$ term\\
+Draw a line parellel to x-axis and perpendicular line to x-axis from where it touches curve.\\
+\textbf{Upper quartile marks}: $57$
+
+
+
+\end{frame}
+\end{document}
