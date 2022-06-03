@@ -1,0 +1,107 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Inbuilt themes in beamer
+\documentclass{beamer}
+
+% Theme choice:
+\usetheme{CambridgeUS}
+\usepackage{amsmath}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\cdf}[2]{\ensuremath{\text{F}_{#1}\left(#2\right)}}
+
+% Title page details: 
+\title{Assignment3} 
+\author{MD GUFRAN ASHRAF (BT21BTECH11003)}
+\date{\today}
+
+\begin{document}
+
+% Title page frame
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+
+% Lists frame
+\section{Problem}
+\begin{frame}{Problem Statement}
+
+\textbf{(Papoulis chap-7 - 7.10 )}
+We denote by $x_{m}$ a random variable equal to the number of tosses of a coin until heads shows
+for the mth time. Show that if P[h] = P. then E_{{x}_m} = m/p
+
+\end{frame}
+
+
+% Blocks frame
+\section{Solution}
+\begin{frame}{Solution}
+As we know 
+\begin{equation}
+    1+x+x^2......x^n=\frac{1}{1-x}
+\end{equation}
+for
+
+    $$ -1 < x < 1 $$
+Differentiating on both side with respect to x we get
+\begin{equation}
+    1+2x+3x^2+4x^3....(n-1)x^n..=\frac{1}{(1-x)^2}
+\end{equation}
+\end{frame} 
+
+\begin{frame}
+The random variable x1 equals the number of tosses until head shows for the time, \\
+Hence, x1 takes the value 1,2..... with P(x1=k)=pq^(k-1).\\ Hence,
+\begin{equation}
+   E(x_{1})=\sum_{k=1}^{\infty}kP(x1=k)
+\end{equation}
+\begin{equation}
+    E(x_{1})=\sum_{k=1}^{\infty}kpq^(k-1)
+\end{equation}
+from equation 1 we can say
+\begin{equation}
+    E(x_{1})=\frac{p}{(1-q)^2}
+\end{equation}
+as we know that p+q=1
+\begin{equation}
+    E(x1)=\frac{1}{p}
+\end{equation}
+\end{frame}
+
+\begin{frame}
+Starting the count after the first head shows , we conclude that the random variable x2-x1 has the same statistics to x1\\ Hence,
+\begin{equation}
+    E(X_{2}-X_{1})=E(x_{1})
+\end{equation}
+\begin{equation}
+    E(x_{2})=2E(x_{1})=\frac{2}{p}
+\end{equation}
+From induction
+\begin{equation}
+    E(X_{n}-X_{(n-1)})=E(x_{1})
+\end{equation}
+\begin{equation}
+    E(x_{n})=E_{X_{(n-1)}} +E(x_{1})=\frac{n-1}{p} + \frac{1}{p}=\frac{n}{p}
+\end{equation}
+So
+\begin{equation}
+     E(x_{n})=\frac{n}{p}
+\end{equation}
+
+\end{frame}
+
+
+
+\end{document}
