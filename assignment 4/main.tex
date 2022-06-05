@@ -1,0 +1,108 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Inbuilt themes in beamer
+\documentclass{beamer}
+
+% Theme choice:
+\usetheme{CambridgeUS}
+\usepackage{amsmath}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\cdf}[2]{\ensuremath{\text{F}_{#1}\left(#2\right)}}
+
+% Title page details: 
+\title{Assignment 4 } 
+\author{MD GUFRAN ASHRAF (BT21BTECH11003)}
+\date{\today}
+
+\begin{document}
+
+% Title page frame
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+
+% Lists frame
+\section{Problem}
+\begin{frame}{Problem Statement}
+
+\textbf{(Papoulis chap-8 - 8.17 )}
+Suppose that the IQ scores of children in a certain grade are the samples of an N({\eta,\sigma}).\\We test 10 children and obtain the following averages: x = 90, s = 5.
+Find the 0.95 confidence interval of \sigma  and  \eta
+
+\end{frame}
+
+
+% Blocks frame
+\section{Solution}
+\begin{frame}{Solution}
+We have n=10 so,
+\begin{equation}
+   n-1=10-1=9
+\end{equation}
+We have one tail condition
+So, from t-table we can say for 95\% confidence and n=10 we have
+
+    $$ t_{0.95}(10-1)=t_{0.95}(9)=2.26 $$
+As we know
+\begin{equation}
+    \eta=\Bar{x} 
+\end{equation}
+so 95\% of \eta \\will lie between
+\end{frame} 
+
+\begin{frame}
+
+\begin{equation}
+   \Bar{x}-\frac{ts}{\sqrt{n}} < \eta < \Bar{x} + \frac{ts}{\sqrt{n}}
+\end{equation}
+\begin{equation}
+   90-\frac{2.26*5}{\sqrt{10}} < \eta < 90 + \frac{2.26*5}{\sqrt{10}}
+\end{equation}
+
+\begin{equation}
+    86.43 < \eta < 93.57
+\end{equation}
+For one tail level of confidence(\alpha)\\ 
+\begin{equation}
+    \alpha=0.025
+\end{equation}
+\end{frame}
+
+\begin{frame}
+Chi squared value value are as follows from chi table
+\begin{equation}
+    \chi_{L}^2=\chi_{1-\alpha}^2=\chi_{0.975}^2(9)=19.02
+\end{equation}
+\begin{equation}
+    \chi_{R}^2=\chi_{\alpha}^2=\chi_{0.025}^2(9)=2.70
+\end{equation}
+Now,
+\begin{equation}
+    \frac{(n-1)s^2}{\chi_{L}^2} < \sigma^2 < \frac{(n-1)s^2}{\chi_{R}^2}
+\end{equation}
+\begin{equation}
+    \frac{9(5^2)}{19.02} < \sigma^2 < \frac{9(5^2)}{2.7}
+\end{equation}
+So
+\begin{equation}
+     3.44 < \sigma < 9.13
+\end{equation}
+
+\end{frame}
+
+
+
+\end{document}
