@@ -1,0 +1,95 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Inbuilt themes in beamer
+\documentclass{beamer}
+
+% Theme choice:
+\usetheme{CambridgeUS}
+\usepackage{amsmath}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\cdf}[2]{\ensuremath{\text{F}_{#1}\left(#2\right)}}
+
+% Title page details: 
+\title{Assignment 5 } 
+\author{MD GUFRAN ASHRAF (BT21BTECH11003)}
+\date{\today}
+
+\begin{document}
+
+% Title page frame
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+
+% Lists frame
+\section{Problem}
+\begin{frame}{Problem Statement}
+
+\textbf{(Papoulis chap-8 - 8.41 )}
+Let T(x) represent an unbiased estimator for the unknown parameter ${\psi(\theta)}$ based on the
+random variables $(X_{1}, X_{2} •••• x_{n}) = x$ under joint density function f(x,$\theta$). Show that the
+Crammer-Rao lower bound for the parameter $\psi(\theta)$ satisfies the inequality\\
+\begin{equation*}
+Var{{T(x)}} \geq \dfrac{[{\psi}^{'}({\theta})]^{2}}{E \left\{ \left(\dfrac{{\partial}{\log}f(x,{\theta})}{{\partial}{\theta}}\right)^2 \right\}}
+\end{equation*}
+
+                                  
+
+\end{frame}
+
+
+% Blocks frame
+\section{Solution}
+\begin{frame}{Solution}
+\begin{equation}
+    E[T(x)] = \int_{-\infty}^{\infty}T(x)f(x;\theta)dx = \psi(\theta)
+\end{equation}
+So after differentiating with respect to $\theta$
+we get
+\begin{equation}
+    \int_{-\infty}^{\infty}T(x)\dfrac{{\partial}f(x,{\theta})}{{\partial}{\theta}}dx = {\psi}^{'}({\theta} 
+\end{equation}
+Replacing T(x) as $\psi(\theta)$
+\begin{equation}
+    \int_{-\infty}^{\infty}\psi(\theta)\dfrac{{\partial}f(x,{\theta})}{{\partial}{\theta}}dx = 0
+\end{equation}
+\end{frame} 
+
+\begin{frame}
+On subtrating equation 2 with 3 we get
+\begin{equation}
+     \int_{-\infty}^{\infty}[T(x)-\psi(\theta)]\dfrac{{\partial}f(x,{\theta})}{{\partial}{\theta}}dx = {\psi}^{'}({\theta})
+\end{equation}
+we can say
+\begin{equation}
+    \dfrac{{\partial}{\log}f(x,{\theta})}{{\partial}{\theta}}f(x;{\theta}) = \dfrac{{\partial}f(x;{\theta})}{{\partial}{\theta}}
+\end{equation}
+\begin{equation}
+     \int_{-\infty}^{\infty}[T(x)-\psi(\theta)]f(x;{\theta})\dfrac{{\partial}{\log}f(x,{\theta})}{{\partial}{\theta}}dx = {\psi}^{'}({\theta})
+\end{equation}
+\end{frame}
+
+\begin{frame}
+From cauchy schwarz inequality we can give
+\begin{equation*}
+    E[[{T(x)-{\psi}(\theta)}]^2] \geq \dfrac{[{\psi}^{'}({\theta})]^{2}}{E \left\{ \left(\dfrac{{\partial}{\log}f(x,{\theta})}{{\partial}{\theta}}\right)^2 \right\}}
+\end{equation*}
+
+\end{frame}
+
+
+
+\end{document}
