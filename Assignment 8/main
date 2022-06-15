@@ -1,0 +1,83 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Inbuilt themes in beamer
+\documentclass{beamer}
+
+% Theme choice:
+\usetheme{CambridgeUS}
+\usepackage{amsmath}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\cdf}[2]{\ensuremath{\text{F}_{#1}\left(#2\right)}}
+
+% Title page details: 
+\title{Assignment 8 } 
+\author{MD GUFRAN ASHRAF (BT21BTECH11003)}
+\date{\today}
+
+\begin{document}
+
+% Title page frame
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+
+% Lists frame
+\section{Problem}
+\begin{frame}{Problem Statement}
+
+\textbf{(Papoulis chap-13- 13.5 )}
+Show that if 
+     E[s(t+\lambda)|s(t),s(t-\tau)] = E[s(t+\lambda)|s(t)]\\
+    then R_{s}(\tau) = Ie^{-\alpha|\tau|}
+\end{frame}
+
+
+% Blocks frame
+\section{Solution}
+\begin{frame}{Solution}
+Since,
+\begin{align}
+    E[x(t+\lambda)|s(t)] = as(t) \\a = \frac{R(\lambda)}{R(0)}
+\end{align}
+It follows from the assumption that
+\begin{equation}
+    s(t+\lambda) = as(t) \bot s(t-\tau)\\
+
+\end{equation}
+Hence
+    \begin{equation}
+        R(\lambda+\tau) = \frac{R(\lambda}{R(0)}R(\tau) 
+    \end{equation}
+\end{frame} 
+
+\begin{frame}
+The only continous function satisfying the above is an exponential . This is easily shown if we assume that\\ {R(\lambda)}\\ is differentiable  for \lambda \geq 0. \\
+Differentiating (4) with respect to $\lambda and setting$ \\
+$\lambda = 0^+$
+\begin{equation*}
+    R^'(\tau) + \alpha R(\tau) = o
+\end{equation*}
+\begin{equation*}
+    \alpha = \frac{-R^'(O^+)}{R(0)}
+\end{equation*}
+This yields 
+\begin{equation*}
+    R(\tau) = Ie^{-\alpha\tau}
+\end{equation*}
+for \tau  \geq 0.
+\end{frame}
+
+\end{document}
