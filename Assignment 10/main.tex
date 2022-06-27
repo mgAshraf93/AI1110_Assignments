@@ -1,0 +1,86 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you open the
+% 'Share' menu, you can invite other users to edit at the same
+% time. See www.overleaf.com/learn for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Inbuilt themes in beamer
+\documentclass{beamer}
+
+% Theme choice:
+\usetheme{CambridgeUS}
+\usepackage{amsmath}
+\providecommand{\pr}[1]{\ensuremath{\Pr\left(#1\right)}}
+\providecommand{\cdf}[2]{\ensuremath{\text{F}_{#1}\left(#2\right)}}
+
+% Title page details: 
+\title{Assignment 10 } 
+\author{MD GUFRAN ASHRAF (BT21BTECH11003)}
+\date{\today}
+
+\begin{document}
+
+% Title page frame
+\begin{frame}
+    \titlepage 
+\end{frame}
+
+% Outline frame
+\begin{frame}{Outline}
+    \tableofcontents
+\end{frame}
+
+
+% Lists frame
+\section{Problem}
+\begin{frame}{Problem Statement}
+
+\textbf{(Papoulis chap-15- 15.9 )}
+One step predictor $\hat{s_{1}}$[n] of an AR process of order m in terms of its entire past equals
+\begin{equation*}
+    \hat{E}[s[n]|s[n-k], k \geq 1| = -\sum_{k=1}^{m}a_{k}s[n-k]
+\end{equation*}
+Show that its two step predictor  $\hat{s_{2}}$[n]
+\begin{equation*}
+    \hat{E}[s[n]|s[n-k], k \geq 2| = -a_{1}s_{1}[n-1] - \sum_{k=1}^{m}a_{k}s[n-k]
+\end{equation*}
+
+ 
+\end{frame}
+
+
+% Blocks frame
+\section{Solution}
+\begin{frame}{Solution}
+As we know, if 
+\begin{equation}
+    s[n] = a_{1}s[n-1] + ....+ a_{m}s[n-m] + \epsilon [n]
+\end{equation}
+where $$\epsilon [n]$$ is white noise, then the one-step predictor of s[n] equals
+\begin{equation}
+    s_{1}[n] = a_{1}s[n-1] + ....+ a_{m}s[n-m] 
+\end{equation}
+is its two step-predictor. It suffices to show that
+\begin{equation*}
+    s[n] = \hat{s_{2}}[n] \bot s[n-k]\\
+    for k \geq 2
+\end{equation*}
+\end{frame} 
+
+\begin{frame}
+\begin{equation}
+    s[n] - \hat{s_{2}}[n] = a_{1}\left\{s_{1}[n-1] - \hat{s_{1}}[n-1] \right\} + \epsilon [n]
+\end{equation}
+So,
+\begin{equation*}
+     s_{1}[n-1] = \hat{s_{1}}[n-1] \bot s[n-k],
+\end{equation*}
+\begin{equation*}
+     k \geq 2 \;\;\; and \;\;\; \epsilon[n] \bot s[n-k] \;\;\; for \;\;\; k \geq 1
+\end{equation*}
+\end{frame}
+
+\end{document}
